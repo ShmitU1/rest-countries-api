@@ -64,7 +64,7 @@ body {
         .select-country {
             display: flex;
             justify-content: space-between;
-            div {
+            .select-country-div {
                 display: flex;
                 justify-content: flex-end;
                 flex-direction: column;
@@ -127,6 +127,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 .country-btn {
+                    color: #fff;
                     border: 1px solid gray;
                     border-radius: 5px;
                     background: transparent;
@@ -213,7 +214,7 @@ body {
                 }
             }
             .select-country {
-                div {
+                .select-country-div {
                     .filter-country,
                     .display-number-country {
                         color: #fff;
@@ -302,7 +303,7 @@ body {
     #main {
         .section-search {
             .select-country {
-                div {
+                .select-country-div {
                     width: 25%;
                     .label-primary {
                         font-size: .9em;
@@ -341,7 +342,7 @@ body {
     #main {
         .section-search {
             .select-country {
-                div {
+                .select-country-div {
                     width: 15%;
                     .label-primary {
                         font-size: 1em;
