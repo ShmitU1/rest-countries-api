@@ -14,7 +14,7 @@ Users should be able to:
 - Toggle the color scheme between light and dark mode *(optional)*
 
 ### Links
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: https://shmitu1.github.io/rest-countries-api/
 
 ## My process
 
@@ -36,4 +36,4 @@ Users should be able to:
 
 
 ## Author
-
+Łukasz Szmidt
