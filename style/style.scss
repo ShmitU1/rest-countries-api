@@ -75,6 +75,7 @@ body {
                 }
                 .filter-country,
                 .display-number-country {
+                    color: #000;
                     padding: 1rem;
                     border: 1px solid $VeryLightGray;
                     border-radius: 5px;
@@ -199,13 +200,6 @@ body {
     }
     #main {
         .section-search {
-            div {
-                .filter-country,
-                .display-number-country {
-                    box-shadow: 0px 0px 25px -5px $DarkBlue;
-                    background: $DarkBlue;
-                }
-            }   
             .input-box {
                 border: none;
                 box-shadow: 0px 0px 25px -5px $DarkBlue;
@@ -219,11 +213,15 @@ body {
                 }
             }
             .select-country {
-                .filter-country,
-                .display-number-country {
-                    color: #fff;
-                    border: none;
-                    padding: 1rem;
+                div {
+                    .filter-country,
+                    .display-number-country {
+                        color: #fff;
+                        border: none;
+                        padding: 1rem;
+                        box-shadow: 0px 0px 25px -5px $DarkBlue;
+                        background: $DarkBlue;
+                    }
                 }
             }
         }
@@ -250,7 +248,7 @@ body {
 }
 
 
-// Loader animation
+// Loader animation class
 .lds-ring {
     display: none;
     justify-content: center;
