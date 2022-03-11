@@ -55,12 +55,12 @@ function displayCountry(content, countryTab) {
 
 
 function showCountryElement(content, country) {
-    const {name, population, region, flag} = country
-    let {capital} = country
-    if(capital === undefined) {
+    const { name, population, region, flag } = country
+    let { capital } = country
+    if (capital === undefined) {
         capital = 'Unknown country capital'
     }
-        content.innerHTML += `
+    content.innerHTML += `
         <article class="country-element">
             <figure class="img-container">
                 <img src="${flag}" alt="flag of ${name}">
@@ -85,7 +85,7 @@ const showSelectedNumberCountry = (data) => {
         searchInput.value = ''
         const selectValue = e.target.value
         const countryElement = document.querySelectorAll('.country-element')
-        switch(selectValue) {
+        switch (selectValue) {
             case '10':
                 selectedNumberOfCountry(countryTab, selectValue, countryElement)
                 break;
@@ -122,7 +122,7 @@ function filterCountry(e) {
     const countryElements = document.querySelectorAll('.country-element')
     countryElements.forEach(country => {
         const region = country.children[1].children[2].children[1].textContent
-        switch(e.target.value) {
+        switch (e.target.value) {
             case 'All':
                 country.style.display = 'grid'
                 break;
@@ -150,7 +150,7 @@ function filterCountry(e) {
 // Function to switch statement in filterCountry function that display or hide elements base on region
 function showCountryByRegion(country, region, caseName) {
     searchInput.value = ''
-    if(region === caseName) {
+    if (region === caseName) {
         country.style.display = 'grid'
     }
     else {
@@ -172,7 +172,7 @@ function searchCountry() {
     listItem.forEach(item => {
         let parentElement = item.parentElement.parentElement
         let text = item.textContent
-        if(text.toLowerCase().includes(filter)) {
+        if (text.toLowerCase().includes(filter)) {
             parentElement.style.display = 'grid'
         }
         else {
@@ -184,9 +184,9 @@ function searchCountry() {
 
 // Function that shows detailed information about a particular country
 function showDetailInformationAboutCountry(countryTab) {
-    
+
     const countryBtn = document.querySelectorAll('.country-btn')
-    
+
     countryBtn.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const mainContainer = document.querySelector('#main')
@@ -196,25 +196,25 @@ function showDetailInformationAboutCountry(countryTab) {
 
             const countryName = e.target.parentElement.parentElement.children[1].children[0].textContent
             countryTab.forEach(dataCountry => {
-                const {name, flag, nativeName, population, region, subregion, topLevelDomain, currencies, languages} = dataCountry
-                let {borders, capital} = dataCountry
-                
-                if(name === countryName) {
+                const { name, flag, nativeName, population, region, subregion, topLevelDomain, currencies, languages } = dataCountry
+                let { borders, capital } = dataCountry
+
+                if (name === countryName) {
                     let currency
-                    if(borders === undefined) {
+                    if (borders === undefined) {
                         borders = 'Unknown country borders'
                     }
-                    if(capital === undefined) {
+                    if (capital === undefined) {
                         capital = 'Unknown country capital'
                     }
-                    if(currencies === undefined) {
+                    if (currencies === undefined) {
                         currency = 'Unknown currency'
                     } else {
                         currency = currencies.map(item => item.name)
                     }
 
                     const language = languages.map(item => item.name)
-                    
+
                     // create section info content
                     sectionInfo.innerHTML = ` 
                         <button class="back-btn"><i class="fa-solid fa-arrow-left-long"></i> Back</button>
