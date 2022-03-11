@@ -25,6 +25,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 2rem 1rem;
+    border-bottom: 1px solid rgb(196, 196, 196);
     box-shadow: 0px 0px 25px -2px rgba(226, 224, 224, 1);
     h1 {
         font-size: 1.2em;
@@ -48,7 +49,7 @@ body {
             margin-top: 1rem;
             margin-bottom: 2.5rem;
             padding: 1rem 1.5rem;
-            border: 1px solid $VeryLightGray;
+            border: 1px solid rgb(196, 196, 196);
             box-shadow: 0px 0px 25px -2px rgba(226, 224, 224, 1);
             border-radius: 10px;
             .search-input {
@@ -77,10 +78,17 @@ body {
                 .display-number-country {
                     color: #000;
                     padding: 1rem;
-                    border: 1px solid $VeryLightGray;
+                    border: 1px solid rgb(196, 196, 196);
                     border-radius: 5px;
                     box-shadow: 0px 0px 25px -2px rgba(226, 224, 224, 1);
                     background: transparent;
+                    option {
+                        background-color: #fff;
+                        color: #000;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
                     &:focus {
                         outline: none;
                     }
@@ -92,14 +100,17 @@ body {
     //Country section
     .country-section {
         display: grid;
+        grid-column: center;
         grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
         .country-element {
             margin: 2rem;
+            border: 1px solid rgb(196, 196, 196);
             border-radius: 10px;
             box-shadow: 0px 0px 25px -2px rgba(226, 224, 224, 1);
             .img-container {
                 height: 200px;
                 border-radius: 10px 10px 0 0;
+                border-bottom: 1px solid rgb(196, 196, 196);
                 img {
                     width: 100%;
                     height: 100%;
@@ -134,6 +145,10 @@ body {
                     padding: 1rem 1.5rem;
                     margin-bottom: 1rem;
                     cursor: pointer;
+                    &:hover {
+                        color: #fff;
+                        background-color: $DarkBlue;
+                    }
                 }
             }
             
@@ -158,6 +173,10 @@ body {
         background: transparent;
         box-shadow: 0px 0px 7px 3px rgb(161, 161, 161);
         cursor: pointer;
+        &:hover {
+            background-color: $DarkBlue;
+            color: #fff;
+        }
     }
     .content-container {
         .flag-container {
@@ -198,6 +217,7 @@ body {
     color: #fff;
     .nav-header {
         box-shadow: 0px 0px 25px -5px $DarkBlue;
+        border: none;
     }
     #main {
         .section-search {
@@ -220,6 +240,7 @@ body {
                         color: #fff;
                         border: 1px solid $DarkBlue;
                         padding: 1rem;
+                        border: 1px solid rgb(196, 196, 196);
                         box-shadow: 0px 0px 25px -5px $DarkBlue;
                         background: transparent;
                     }
@@ -230,10 +251,18 @@ body {
             .country-element {
                 box-shadow: 0px 0px 25px -5px $DarkBlue;
                 background: $DarkBlue;
+                border: none;
+                .img-container {
+                    border: none;
+                }
                 .btn-container {
                     .country-btn {
                         border: 1px solid #fff;
                         color: #fff;
+                        &:hover {
+                            background-color: #fff;
+                            color: $DarkBlue;
+                        }
                     }
                 }
             }
@@ -243,7 +272,12 @@ body {
     .country-specific-info {
         .back-btn {
             color: #fff;
-            box-shadow: 0px 0px 7px 3px rgb(26, 25, 25);
+            box-shadow: none;
+            border: 2px solid $DarkBlue;
+            &:hover {
+                background-color: #fff;
+                color: $DarkBlue;
+            }
         }
     }
 }
@@ -341,6 +375,11 @@ body {
 @media screen and (min-width: 1024px) {
     #main {
         .section-search {
+            .input-box {
+                .search-input {
+                    font-size: 1.1em;
+                }
+            }
             .select-country {
                 .select-country-div {
                     width: 15%;
@@ -352,6 +391,8 @@ body {
         }
     }
     .country-specific-info {
+        display: flex;
+        align-items: center;
         .content-container {
             .flag-container {
                 img {
@@ -361,12 +402,16 @@ body {
             .info-content {
                 margin: 0 5rem 0 2rem;
                 h1 {
-                    font-size: 2em;
+                    font-size: 2.3em;
                 }
                 .article-container {
-                    font-size: 1em;
+                    font-size: 1.2em;
                 }
             }
+        }
+        .back-btn {
+            font-size: .9em;
+            padding: 1rem 2.5rem;
         }
     }
 }

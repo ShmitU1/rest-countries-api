@@ -23,6 +23,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 2rem 1rem;
+  border-bottom: 1px solid #c4c4c4;
   -webkit-box-shadow: 0px 0px 25px -2px #e2e0e0;
           box-shadow: 0px 0px 25px -2px #e2e0e0;
 }
@@ -56,7 +57,7 @@ body {
   margin-top: 1rem;
   margin-bottom: 2.5rem;
   padding: 1rem 1.5rem;
-  border: 1px solid #fafafa;
+  border: 1px solid #c4c4c4;
   -webkit-box-shadow: 0px 0px 25px -2px #e2e0e0;
           box-shadow: 0px 0px 25px -2px #e2e0e0;
   border-radius: 10px;
@@ -105,11 +106,22 @@ body {
 #main .section-search .select-country .select-country-div .display-number-country {
   color: #000;
   padding: 1rem;
-  border: 1px solid #fafafa;
+  border: 1px solid #c4c4c4;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 25px -2px #e2e0e0;
           box-shadow: 0px 0px 25px -2px #e2e0e0;
   background: transparent;
+}
+
+#main .section-search .select-country .select-country-div .filter-country option,
+#main .section-search .select-country .select-country-div .display-number-country option {
+  background-color: #fff;
+  color: #000;
+}
+
+#main .section-search .select-country .select-country-div .filter-country:hover,
+#main .section-search .select-country .select-country-div .display-number-country:hover {
+  cursor: pointer;
 }
 
 #main .section-search .select-country .select-country-div .filter-country:focus,
@@ -120,12 +132,14 @@ body {
 #main .country-section {
   display: -ms-grid;
   display: grid;
+  grid-column: center;
   -ms-grid-columns: (minmax(330px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
 }
 
 #main .country-section .country-element {
   margin: 2rem;
+  border: 1px solid #c4c4c4;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 25px -2px #e2e0e0;
           box-shadow: 0px 0px 25px -2px #e2e0e0;
@@ -134,6 +148,7 @@ body {
 #main .country-section .country-element .img-container {
   height: 200px;
   border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid #c4c4c4;
 }
 
 #main .country-section .country-element .img-container img {
@@ -190,6 +205,11 @@ body {
   cursor: pointer;
 }
 
+#main .country-section .country-element .btn-container .country-btn:hover {
+  color: #fff;
+  background-color: #2b3945;
+}
+
 #main .country-section .country-element:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -214,6 +234,11 @@ body {
   -webkit-box-shadow: 0px 0px 7px 3px #a1a1a1;
           box-shadow: 0px 0px 7px 3px #a1a1a1;
   cursor: pointer;
+}
+
+.country-specific-info .back-btn:hover {
+  background-color: #2b3945;
+  color: #fff;
 }
 
 .country-specific-info .content-container .flag-container {
@@ -259,6 +284,7 @@ body {
 .dark-mode .nav-header {
   -webkit-box-shadow: 0px 0px 25px -5px #2b3945;
           box-shadow: 0px 0px 25px -5px #2b3945;
+  border: none;
 }
 
 .dark-mode #main .section-search .input-box {
@@ -283,6 +309,7 @@ body {
   color: #fff;
   border: 1px solid #2b3945;
   padding: 1rem;
+  border: 1px solid #c4c4c4;
   -webkit-box-shadow: 0px 0px 25px -5px #2b3945;
           box-shadow: 0px 0px 25px -5px #2b3945;
   background: transparent;
@@ -292,6 +319,11 @@ body {
   -webkit-box-shadow: 0px 0px 25px -5px #2b3945;
           box-shadow: 0px 0px 25px -5px #2b3945;
   background: #2b3945;
+  border: none;
+}
+
+.dark-mode #main .country-section .country-element .img-container {
+  border: none;
 }
 
 .dark-mode #main .country-section .country-element .btn-container .country-btn {
@@ -299,10 +331,21 @@ body {
   color: #fff;
 }
 
+.dark-mode #main .country-section .country-element .btn-container .country-btn:hover {
+  background-color: #fff;
+  color: #2b3945;
+}
+
 .dark-mode .country-specific-info .back-btn {
   color: #fff;
-  -webkit-box-shadow: 0px 0px 7px 3px #1a1919;
-          box-shadow: 0px 0px 7px 3px #1a1919;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 2px solid #2b3945;
+}
+
+.dark-mode .country-specific-info .back-btn:hover {
+  background-color: #fff;
+  color: #2b3945;
 }
 
 .lds-ring {
@@ -422,11 +465,22 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  #main .section-search .input-box .search-input {
+    font-size: 1.1em;
+  }
   #main .section-search .select-country .select-country-div {
     width: 15%;
   }
   #main .section-search .select-country .select-country-div .label-primary {
     font-size: 1em;
+  }
+  .country-specific-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .country-specific-info .content-container .flag-container img {
     width: 70%;
@@ -435,10 +489,14 @@ body {
     margin: 0 5rem 0 2rem;
   }
   .country-specific-info .content-container .info-content h1 {
-    font-size: 2em;
+    font-size: 2.3em;
   }
   .country-specific-info .content-container .info-content .article-container {
-    font-size: 1em;
+    font-size: 1.2em;
+  }
+  .country-specific-info .back-btn {
+    font-size: .9em;
+    padding: 1rem 2.5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */
