@@ -41,7 +41,7 @@ getCountry()
 
 // Show all the countries on the page
 const showCountry = (data) => {
-    const countryTab = data.slice(0, data.length)
+    const countryTab = data.slice(0, 51)
     displayCountry(content, countryTab)
     showSelectedNumberCountry(data)
 }
@@ -49,7 +49,6 @@ const showCountry = (data) => {
 // Function that displays elements on the page
 function displayCountry(content, countryTab) {
     countryTab.forEach(country => showCountryElement(content, country))
-
     showDetailInformationAboutCountry(countryTab)
 }
 
@@ -113,6 +112,7 @@ function selectedNumberOfCountry(countryTab, selectValue, countryElement) {
 
     countryFilter.children[0].setAttribute('selected', '')
 
+    
     displayCountry(content, newCountryTab)
 }
 
@@ -150,12 +150,7 @@ function filterCountry(e) {
 // Function to switch statement in filterCountry function that display or hide elements base on region
 function showCountryByRegion(country, region, caseName) {
     searchInput.value = ''
-    if (region === caseName) {
-        country.style.display = 'grid'
-    }
-    else {
-        country.style.display = 'none'
-    }
+    region === caseName ? country.style.display = 'grid' : country.style.display = 'none'
 }
 
 
@@ -171,8 +166,8 @@ function searchCountry() {
 
     listItem.forEach(item => {
         let parentElement = item.parentElement.parentElement
-        let text = item.textContent
-        if (text.toLowerCase().includes(filter)) {
+        let countryName = item.textContent
+        if (countryName.toLowerCase().includes(filter)) {
             parentElement.style.display = 'grid'
         }
         else {
@@ -200,18 +195,12 @@ function showDetailInformationAboutCountry(countryTab) {
                 let { borders, capital } = dataCountry
 
                 if (name === countryName) {
+                    
+                    // show message 'Unknown....' if something is undefined
+                    borders === undefined ? borders = 'Unknown country capital' : borders
+                    capital === undefined ? capital = 'Unknown country capital' : capital
                     let currency
-                    if (borders === undefined) {
-                        borders = 'Unknown country borders'
-                    }
-                    if (capital === undefined) {
-                        capital = 'Unknown country capital'
-                    }
-                    if (currencies === undefined) {
-                        currency = 'Unknown currency'
-                    } else {
-                        currency = currencies.map(item => item.name)
-                    }
+                    currencies === undefined ? currencies = 'Unknown country capital' : currency = currencies.map(item => item.name)
 
                     const language = languages.map(item => item.name)
 
