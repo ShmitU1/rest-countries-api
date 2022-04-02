@@ -71,7 +71,7 @@ function showCountryElement(content, country) {
                 <p><strong>Capital: </strong>${capital}</p>
             </section>
             <div class="btn-container">
-                <button class="country-btn">Show detail information</button>
+                <button class="country-btn" aria-label="show more information about country">Show detail information</button>
             </div>
         </article>
     `
@@ -206,7 +206,7 @@ function showDetailInformationAboutCountry(countryTab) {
 
                     // create section info content
                     sectionInfo.innerHTML = ` 
-                        <button class="back-btn"><i class="fa-solid fa-arrow-left-long"></i> Back</button>
+                        <button class="back-btn" aria-label="back to main side of page"><i class="fa-solid fa-arrow-left-long"></i> Back</button>
                         <div class="content-container">
                             <figure class="flag-container">
                                <img src="${flag}"/>
