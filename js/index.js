@@ -112,7 +112,7 @@ function selectedNumberOfCountry(countryTab, selectValue, countryElement) {
 
     countryFilter.children[0].setAttribute('selected', '')
 
-    
+
     displayCountry(content, newCountryTab)
 }
 
@@ -191,11 +191,11 @@ function showDetailInformationAboutCountry(countryTab) {
 
             const countryName = e.target.parentElement.parentElement.children[1].children[0].textContent
             countryTab.forEach(dataCountry => {
-                const { name, flag, nativeName, population, region, subregion, topLevelDomain, currencies, languages } = dataCountry
-                let { borders, capital } = dataCountry
+                const { name, flag, nativeName, population, region, subregion, topLevelDomain, languages } = dataCountry
+                let { borders, capital, currencies } = dataCountry
 
                 if (name === countryName) {
-                    
+
                     // show message 'Unknown....' if something is undefined
                     borders === undefined ? borders = 'Unknown country capital' : borders
                     capital === undefined ? capital = 'Unknown country capital' : capital
