@@ -191,16 +191,15 @@ function showDetailInformationAboutCountry(countryTab) {
 
             const countryName = e.target.parentElement.parentElement.children[1].children[0].textContent
             countryTab.forEach(dataCountry => {
-                const { name, flag, nativeName, population, region, subregion, topLevelDomain, languages } = dataCountry
-                let { borders, capital, currencies } = dataCountry
+                let { name, flag, nativeName, population, region, subregion, topLevelDomain, languages, borders, capital, currencies } = dataCountry
 
                 if (name === countryName) {
 
                     // show message 'Unknown....' if something is undefined
-                    borders === undefined ? borders = 'Unknown country capital' : borders
+                    borders === undefined ? borders = 'Unknown country borders' : borders
                     capital === undefined ? capital = 'Unknown country capital' : capital
                     let currency
-                    currencies === undefined ? currencies = 'Unknown country capital' : currency = currencies.map(item => item.name)
+                    currencies === undefined ? currency = 'Unknown country currencies' : currency = currencies.map(item => item.name)
 
                     const language = languages.map(item => item.name)
 
